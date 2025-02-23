@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Pose Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-item">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('index') }}">Pose Detector</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Yoga Pose Detector</h1>
+        <div class="content">
+            <h2>About This Project</h2>
+            <p>Welcome to the Yoga Pose Detector! This project uses computer vision and machine learning to identify various yoga poses in real-time. The system employs OpenCV, MediaPipe, and Flask to provide an interactive experience.</p>
+            <p>Features:</p>
+            <ul>
+                <li>Real-time yoga pose detection</li>
+                <li>Support for multiple yoga poses</li>
+                <li>Timer functionality to track the duration of poses</li>
+                <li>User-friendly web interface</li>
+            </ul>
+            <p>Explore and improve your yoga practice with our intelligent Yoga Pose Detector!</p>
+            <a href="{{ url_for('index') }}" class="button">Start Yoga Pose Detector</a>
+        </div>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='yoga.png') }}" alt="Yoga Image">
+        </div>
+    </div>
+</body>
+</html>

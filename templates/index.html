@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Pose Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-item">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="{{ url_for('index') }}">Pose Detector</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Yoga Pose Detector</h1>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" id="video-feed" alt="Video Feed">
+        </div>
+        <div class="controls">
+            <button onclick="startTimer()">Start Timer</button>
+            <button onclick="stopTimer()">Stop Timer</button>
+        </div>
+        <div class="asanas">
+            <h2>Choose an Asana:</h2>
+            <select id="asana-select" onchange="switchAsana()">
+                <option value="Tadasana">Tadasana (Mountain Pose)</option>
+                <option value="Utkatasana">Utkatasana (Chair Pose)</option>
+                <option value="Savasana">Savasana (Corpse Pose)</option>
+                <option value="Virabhadrasana I">Virabhadrasana I (Warrior I Pose)</option>
+                <option value="Virabhadrasana II">Virabhadrasana II (Warrior II Pose)</option>
+                <option value="Virabhadrasana III">Virabhadrasana III (Warrior III Pose)</option>
+                <option value="Vrksasana">Vrksasana (Tree Pose)</option>
+                <option value="Trikonasana">Trikonasana (Triangle Pose)</option>
+                <option value="Bhujangasana">Bhujangasana (Cobra Pose)</option>
+                <option value="Adho Mukha Svanasana">Adho Mukha Svanasana (Downward Dog Pose)</option>
+            </select>
+        </div>
+        <a href="{{ url_for('home') }}" class="button">Back to Home</a>
+    </div>
+    <script>
+        function startTimer() {
+            fetch('/start_timer', { method: 'POST' });
+        }
+        
+        function stopTimer() {
+            fetch('/stop_timer', { method: 'POST' });
+        }
+
+        function switchAsana() {
+            const selectedAsana = document.getElementById('asana-select').value;
+            // Logic to switch the asana
+        }
+    </script>
+</body>
+</html>
