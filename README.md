@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Yoga Pose Detector</title>
-</head>
+
 <body>
     <h1>🧘 Yoga Pose Detector</h1>
     <p>Welcome to the Yoga Pose Detector project! This application leverages computer vision and machine learning to identify various yoga poses in real-time using OpenCV, MediaPipe, and Flask.</p>
